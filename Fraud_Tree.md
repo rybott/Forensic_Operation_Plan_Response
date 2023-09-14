@@ -1,7 +1,48 @@
 
-# Fraud Tree
-*Only Asset Misappropriation and Statement Fraud will be used
 
+
+# Frauds Used In the FEFF War Games
+***Asset Misappropriation***
+- Skimming
+    - Unrecords Sale
+    - Recievables
+        - Write-off Schemes
+- Fraudulent Dispursments
+    - Billling
+        - Shell Companies
+        - Unknowing Vendor
+        - Personal Purchases
+    - Payroll
+        - Ghost Employees
+        - Commission Schemes
+        - Falsified Wages
+    - Check Tampering
+        - Forged Maker: Forging Authorized Makers signiture
+        - Forged Endorsment
+        - Altered Payee: One method is check washing
+        - Concealed Checks: Sending Batches of checks to signee with fraudulent checks mixed in
+        - Authorized Maker: Misuse of ones power to sign checks
+  - Other Assets
+    - Misuse
+    - Larceny
+        - Asset Requests and Transfers
+        - False Sales and Shipping
+        - Purchase & Receiving: For purposes of transfering assets
+        - Unconcealed Larceny: Outright theft of assets
+          
+***Financial Statment Fraud***
+- Asset/Revenue Overstatement
+  - Timing Differences: Smoothing through recording Rev / Exp in wrong period
+  - Fictious Revenues: Falsifying Revenues 
+  - Concealed Liabilities: Falsifying Debts owed
+  - Improper Disclosures: Failure to properly and completely disclosure impairments to finanical position
+  - Improper Asset Valuations
+- Asset/Revenue Understatments
+
+
+
+
+# Fraud Tree
 ## Asset Misappropriation
 ### Cash
 **Larceny:** Theft of Cash already on the books
