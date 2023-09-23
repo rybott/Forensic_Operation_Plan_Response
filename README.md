@@ -2,7 +2,7 @@
 ### I wanted to create a spoof of the War Games that give scenario's for war time actions and strategy. This is a python game with three objects, create a company, incorporate fraud, and host an interface for the user to identify the frauds. 
 
 ## Learning Objectives
-### Forenisc Accounting
+### Forensic Accounting
 - A Refresher on the Fraud Tree and relevant red flags to look for
   - The Frauds used in this game can be found in the {frauds.md} file
   - All of these frauds will be represented through there repective red flags
