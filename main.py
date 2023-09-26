@@ -1,5 +1,6 @@
 import pandas as pd
 from Generator_Func import * 
+from Scenarios import *
 
 # Changable Constants 
 regions_data = {
@@ -33,6 +34,7 @@ Sales = generate_sales_data(num_records, start_date, end_date, regions_df, produ
 sales_df = generate_sales_data(num_records, start_date, end_date, regions_df, products_df, Q1, Q2)[0]
 PO_df = generate_purchase_orders(sales_df,Vendor_dict,Inventory_dict,products_df)
 Inventory = generate_Inventory(sales_df,PO_df)
+Expenses = Scenario_1(Sales[1])
 
 
 print(sales_df.info())
