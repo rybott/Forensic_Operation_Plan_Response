@@ -24,14 +24,16 @@ end_date = pd.Timestamp('2022-01-01')
 num_records = 1000
 # Change the dynamic of the buisness with max and min order quantities
 Q1 = 1000 # Minimum per order
-Q2 = 10,000 # Maximum per order
+Q2 = 10000 # Maximum per order
 
 
 
 # Company Generation
-sales_df = generate_sales_data(num_records, start_date, end_date, regions_df, products_df, Q1, Q2)
+Sales = generate_sales_data(num_records, start_date, end_date, regions_df, products_df, Q1, Q2)
+sales_df = generate_sales_data(num_records, start_date, end_date, regions_df, products_df, Q1, Q2)[0]
 PO_df = generate_purchase_orders(sales_df,Vendor_dict,Inventory_dict,products_df)
 Inventory = generate_Inventory(sales_df,PO_df)
+
 
 print(sales_df.info())
 print(PO_df.info())

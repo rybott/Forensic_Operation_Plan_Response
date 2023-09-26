@@ -48,10 +48,32 @@ def generate_sales_data(num_records, start_date, end_date, regions_df, products_
         'Unit_Cost': unit_costs,
         'Quantity': quantities,
         'Revenue': np.array(unit_prices) * np.array(quantities),
-        'Total_Cost': np.array(unit_costs) * np.array(quantities)
-    })
+        'Total_Cost': np.array(unit_costs) * np.array(quantities)})
 
-    return sales_df
+    # Total Revenue Per year
+    qry_Trev = '''
+        SELECT YEAR(Shipment_Date) AS Year, SUM(Revenue) AS Revenue
+        FROM sales_df
+        GROUP BY Year
+        Order By Year
+    '''
+
+    # Total Revenue Per Product Per year
+    qry_rev = '''
+        SELECT YEAR(Shipment_Date) AS Year, Product_Type AS Product, SUM(Revenue) AS Revenue
+        FROM sales_df
+        GROUP BY Year, Product
+        Order By Year
+    '''
+
+    df_Trev = ddb.sql(qry_Trev).df()
+    df_rev = ddb.sql(qry_rev).df()
+
+    
+    Rev_dict = dict(zip(df_Trev['Year'],df_Trev['Revenue'])) 
+
+
+    return [sales_df,Rev_dict]
 
 def generate_purchase_orders(sales_data, Vendor_dict, Inventory_dict, products_df):
     sales_data = sales_data.sort_values(by=['Order_Date'])
