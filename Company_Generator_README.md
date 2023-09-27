@@ -48,7 +48,14 @@ Add things like market flucuation, maybe natural disasters, continuity
 3. Each scenario will also include a profit margin, and you'll subtract Total Rev and Profit Margin to get Exp_Budget
 4. Then you can take Exp_Budget and for each category Exp_Total_Year = Exp_Budget * % allcated
 5. Finally, create all of the corresponding expenses for each year within their exp category.'
-
+### Consideration for Exp
+- *Fixed Expenses* - Rent, Pre-Paid Insurance, Depreciation, etc.
+   - These will have to be calculated by taking the sum of the % allocations for all of the years, then dividing equally by 12 * number of years because these expenses generally don't change over time
+- *COGS* - ( Begining Inventory ) * ( Unit_Cost + Purchases * Unit_Cost ) - ( Ending Inventory * Unit_Cost )
+   - COGS has to be relevant to the sale and purchases of inventory
+   - COGS will be calculated per Quarter for ease, Need to calculate the initial and ending inventory, and purchases is purchase orders for the quarter.
+   - Unit Cost is already facotored in and therefore shouldn't matter but if needed this formula will give you unit_cost \
+     Unit_Cost = (Begining Inventory + Purchases - Ending Inventory) / Rev * (COGS cost allocation)
 ## Other Compresensive Income
 ## Reporting
 ## Fraud
