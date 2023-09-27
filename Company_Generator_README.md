@@ -56,6 +56,7 @@ Add things like market flucuation, maybe natural disasters, continuity
    - COGS will be calculated per Quarter for ease, Need to calculate the initial and ending inventory, and purchases is purchase orders for the quarter.
    - Unit Cost is already facotored in and therefore shouldn't matter but if needed this formula will give you unit_cost \
      Unit_Cost = (Begining Inventory + Purchases - Ending Inventory) / Rev * (COGS cost allocation)
+  - New Idea I might have to do Rev - PM - COGS and then do the rest of the expenses
 ## Other Compresensive Income
 ## Reporting
 ## Fraud
