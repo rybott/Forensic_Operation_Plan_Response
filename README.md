@@ -1,4 +1,5 @@
-# Company Generation
+# Company Generation 
+The first phase of this two phase project
 ## Purpose and Function
 This Portion of the project contains the creation of a company. This company must be completely customizable, fluid and dynamic, and mimic to the best of my ability a real corporation:
 1. Customizable
