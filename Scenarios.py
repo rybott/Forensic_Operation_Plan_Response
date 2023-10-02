@@ -1,9 +1,8 @@
 '''
-This File contains all of teh different scenarios that can be called by the user in the main file
+This File contains all of the different scenarios that can be called by the user in the main file
 '''
-import pandas as pd
 import random
-
+import pandas as pd
 
 Exp_dict = {}
 Exp_list = []
