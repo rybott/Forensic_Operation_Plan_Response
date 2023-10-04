@@ -1,7 +1,7 @@
 # Chart of Accounts
-|Account|Account Title
-|---|---
-|1000|Cash
+|Account|Account Title|
+|---|---|
+|1000|Cash|
 |1010|Accounts Receivable
 |1020|Notes Receivable
 |1030|Interest Receviable
