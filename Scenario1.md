@@ -37,56 +37,56 @@ Tax in this scenario is 13% and is taken from the EBITA
 - Balance Sheet
   - By the end this should be balanced for each of the years
 
-|**Balance Sheet**||Amount|
-|---|---|---|
-|Cash||xxx|
-|Accounts Recievable||xxx|
-|Inventory||xxx|
-||Total Current Assets|xxx|
-|Land||xxx|
-|Equipment||xxx|
-|Accumulated Depreciation||(xxx)|
-||Total Asset|xxx|
-|Accounts Payable||xxx|
-|Notes Payable||xxx|
-||Total Liability|xxx|
-|Retained Earnings||xxx|
-||Total Equity|xxx|
-|***Total Liabilities and Equity***||xxx|
+|Code|**Balance Sheet**|Account|Amount|
+|---|---|---|---|
+|1000|Cash||xxx|
+|1010|Accounts Recievable||xxx|
+|1100|Inventory||xxx|
+|0001||Total Current Assets|xxx|
+|1250|Land||xxx|
+|1230|Equipment||xxx|
+|1231|Accumulated Depreciation||(xxx)|
+|0002||Total Asset|xxx|
+|2000|Accounts Payable||xxx|
+|2020|Notes Payable||xxx|
+|0004||Total Liability|xxx|
+|3010|Retained Earnings||xxx|
+|0005||Total Equity|xxx|
+|0006|***Total Liabilities and Equity***||xxx|
 
-|**Income Statment**||Amount|
-|---|---|---|
-|Sales Rev||xxx|
-|COGS||(xxx)|
-|Gross Profit||xxx|
-|Rent Exp||xxx|
-|Insurance Exp||xxx|
-|Salaries Exp||xxx|
-||Total Operating Exp|xxx|
-||Operating Income|xxx|
-||EBITA|xxx|
-|Interest Income||(xxx)|
-||Income Before Tax|xxx|
-|Income Tax|||
-|***Net Income***||xxx|
+|Code|**Income Statment**||Amount|
+|---|---|---|---|
+|4000|Sales Rev||xxx|
+|5000|COGS||(xxx)|
+|0007|Gross Profit||xxx|
+|5110|Rent Exp||xxx|
+|5050|Insurance Exp||xxx|
+|5010|Salaries Exp||xxx|
+|0008||Total Operating Exp|xxx|
+|0009||Operating Income|xxx|
+|0010||EBITA|xxx|
+|6000|Interest Income||(xxx)|
+|0013||Income Before Tax|xxx|
+|0014|Income Tax|||
+|0015|***Net Income***||xxx|
 
-|**Cash Flow**|||
-|---|---|---|
-|I. Operating Activities|||
-|Net Income||xxx|
-|Depreciation||xxx|
-|(+)/- Accounts Recivable||xxx|
-|+/(-) Accounts Payable||xxx|
-|(+)/- Inventory||xxx|
-|+/(-) Interest Income||xxx|
-||Net Cash From Operations|xxx|
-|II. Investing Activities|||
-|None For this Scenario|||
-|III. Financing Activities|||
-|(-)/+ Notes Payable||(xxx)|
-||Net Cash From Financing|xxx|
-|Begining Cash Balance||xxx|
-|End Cash Balance||xxx|
-|***Net Cash Flow***||xxx|
+|Code|**Cash Flow**|||
+|---|---|---|---|
+|0000|I. Operating Activities|||
+|0015|Net Income||xxx|
+|5030|Depreciation||xxx|
+|1010|(+)/- Accounts Recivable||xxx|
+|2000|+/(-) Accounts Payable||xxx|
+|1100|(+)/- Inventory||xxx|
+|0012|+/(-) Interest Income||xxx|
+|0016||Net Cash From Operations|xxx|
+|0000|II. Investing Activities|||
+|0000|None For this Scenario|||
+|0000|III. Financing Activities|||
+|2020|(-)/+ Notes Payable||(xxx)|
+|0018||Net Cash From Financing|xxx|
+|0019|Begining Cash Balance||xxx|
+|0020|End Cash Balance||xxx|
+|0021|***Net Cash Flow***||xxx|
 
 
