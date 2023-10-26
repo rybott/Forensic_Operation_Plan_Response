@@ -84,3 +84,25 @@
 |9040|Employee Benefits Expense|
 |9050|Stock Option Expense|
 |9060|Amortization Expense|
+|0000|Title|
+|0001|Total Current Assets|
+|0002|Total Assets|
+|0003|Total Current Liability|
+|0004|Total Liability|
+|0005|Total Equity|
+|0006|Total Liabilities and Equity|
+|0007|Gross Profit|
+|0008|Total Operating Exp|
+|0009|Operating Income|
+|0010|EBITDA|
+|0011|EBIT|
+|0012|Interest Income/Exp|
+|0013|Income Before Tax|
+|0014|Income Tax|
+|0015|Net Income|
+|0016|Net Cash From Operations|
+|0017|Net Cash From Investments|
+|0018|Net Cash From Financing|
+|0019|Begining Cash Balance|
+|0020|End Cash Balance|
+|0021|Net Cash Flow|
