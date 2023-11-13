@@ -18,10 +18,6 @@ the years, thus turning a variable cost into a fixed cost.
   - is the only variable expense, and is calculated on random days as a percent of the rev
 
 ## Other Assets
-These are assets not purchased but already on the balance sheet, Land doesn't need to be depreciated but the others do.
-In addition, the Balance sheet won't balance unless either liability or equity increases.
-- Land
-  - Land is increased (Asset) and Retained Earnings is also increased (Equity)
 - Equipment
   - Equipment is increased (Asset) and Notes Payable is also increased (Liability)
   - There are Notes payments and Interest Payments from Cash
@@ -30,8 +26,6 @@ In addition, the Balance sheet won't balance unless either liability or equity i
       correct value of Cash on hand to the first year, making sure everything is balanced.
       - Cash is increased (Asset) and Retained Earnings is also increased (Equity)
 
-## Tax
-Tax in this scenario is 13% and is taken from the EBITA 
      
 ## Financial Statments
 - Balance Sheet
