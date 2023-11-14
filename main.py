@@ -5,6 +5,7 @@ import numpy as np
 from datetime import timedelta
 import random
 import duckdb as ddb
+import sqlite3 as sql
 
 # Further Analysis
 import matplotlib.pyplot as plt
@@ -12,6 +13,9 @@ import plotly.express as px
 
 # Import Scenario Modules
 from ScenarioOne import Generate_Scenario_1
+
+# Create the temp Database 
+conn = sql.connect('Company_Financials.db')
 
 
 # Initial User Data
@@ -62,5 +66,5 @@ Note_Interest_Yrly = .05 # Agreement is .05% on original note value every year.
 Note_Payment_Remaining = (10/20)
 
 # Run Program
-Generate_Scenario_1(regions_df,products_df,start_date,end_date,num_records,Expenses,NumberOf_Ads,Euipment_Exp_AsPercentof_EBITA,Equipment_Useful_Life,Preprogram_Useful_Life,
+Generate_Scenario_1(conn,regions_df,products_df,start_date,end_date,num_records,Expenses,NumberOf_Ads,Euipment_Exp_AsPercentof_EBITA,Equipment_Useful_Life,Preprogram_Useful_Life,
                         Preprgram_Accum_depr,Note_Payment_Yrs,Note_Interest_Yrly,Note_Payment_Remaining)
