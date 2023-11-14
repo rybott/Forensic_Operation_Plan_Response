@@ -1021,11 +1021,10 @@ def Generate_Scenario_1(conn, regions_df,products_df,start_date,end_date,num_rec
       Balance_Sheets_unadjusted.to_excel(writer, sheet_name='Balance_Sheets_Unadjusted', index=False)
       Balance_Sheets.to_excel(writer, sheet_name='Balance_Sheets_Adjusted', index=False)
       Tacc2_adjusted.to_excel(writer, sheet_name='Tacc2_Adjusted', index=False)
-'''
+
   # Income Statment
   Income_Statments.to_sql('Income_Statments', conn, if_exists='replace', index=False)
   # Balance Sheets
   Balance_Sheets.to_sql('Balance_Sheets', conn, if_exists='replace', index=False)
   # General Ledger
   Gen_Journal_df2.to_sql('General_Journal', conn, if_exists='replace', index=False)
-'''
