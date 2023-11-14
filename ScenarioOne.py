@@ -960,7 +960,7 @@ def Generate_Scenario_1(conn, regions_df,products_df,start_date,end_date,num_rec
   Year = []
   Balanced = []
 
-  print("List_Income: ", Income_Statments['Net_Income'])
+
 
   for year in Tacc2_adjusted['Year'].unique():
     if year <= End_Year:
@@ -987,9 +987,6 @@ def Generate_Scenario_1(conn, regions_df,products_df,start_date,end_date,num_rec
       Total_Liability.append(total_liability)
       retained_earnings = -Tacc2_adjusted.loc[(Tacc2_adjusted['Account']==3010) & (Tacc2_adjusted['Year']==year),'Amount'].sum() + Income_Statments.loc[(Income_Statments['Year']==year),'Net_Income'].sum()
       Retained_Earnings.append(retained_earnings*-1)
-      print("Unadj_Retained_Earnings: ",Tacc2_adjusted.loc[(Tacc2_adjusted['Account']==3010) & (Tacc2_adjusted['Year']==year),'Amount'].sum() )
-      print("Net_Income: ", Income_Statments.loc[(Income_Statments['Year']==year),'Net_Income'].sum())
-      print("Retained_Earnings: ", retained_earnings)
 
       total_equity = -retained_earnings
       Total_Equity.append(total_equity)
@@ -1024,10 +1021,11 @@ def Generate_Scenario_1(conn, regions_df,products_df,start_date,end_date,num_rec
       Balance_Sheets_unadjusted.to_excel(writer, sheet_name='Balance_Sheets_Unadjusted', index=False)
       Balance_Sheets.to_excel(writer, sheet_name='Balance_Sheets_Adjusted', index=False)
       Tacc2_adjusted.to_excel(writer, sheet_name='Tacc2_Adjusted', index=False)
-
+'''
   # Income Statment
   Income_Statments.to_sql('Income_Statments', conn, if_exists='replace', index=False)
   # Balance Sheets
   Balance_Sheets.to_sql('Balance_Sheets', conn, if_exists='replace', index=False)
   # General Ledger
   Gen_Journal_df2.to_sql('General_Journal', conn, if_exists='replace', index=False)
+'''
