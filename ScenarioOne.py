@@ -844,7 +844,10 @@ def Generate_Scenario_1(conn, regions_df,products_df,start_date,end_date,num_rec
   'Dr_Cr':Dr_Crs})
 
   Gen_Journal_df2 = pd.concat([Gen_Journal_df,Additional_Journal_df], ignore_index=True)
+  Gen_Journal_df2['Date'] = pd.to_datetime(Gen_Journal_df2['Date'])
+  print(Gen_Journal_df2.info())
 
+  Gen_Journal_df2['Date'] = Gen_Journal_df2['Date'].dt.strftime('%Y-%m-%d %H:%M:%S')
 
 #------------------------------- Creating T accounts ----------#
   # Step 1
