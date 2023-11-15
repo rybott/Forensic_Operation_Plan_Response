@@ -93,10 +93,15 @@ the years, thus turning a variable cost into a fixed cost.
   - The First fraud for Scenario 1, this will contain **Fake Sales**
   - First update the fraud ledger like you would a regular sale
   - Journal Entries
-    | Account Title      | Dr  | Cr  |
+    | Record Sale        | Dr  | Cr  |
     | ------------------ | --- | --- |
     | AR (Can't be Cash) | xxx |     |
     | Sales              |     | xxx |
+  - Inventory Entries - Can't use same logic
+    | Record Inventory          | Dr  | Cr  |
+    | ------------------------- | --- | --- |
+    | Inventory (Increase Only) | xxx |     |
+    | Retained Earnings         |     | xxx |  
   - Effects on Target Financial Statements
     - Increase Assets + Increased Retained Earnings (Income Statments) = Balanced
   - Can be detected two ways:
