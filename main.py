@@ -36,8 +36,8 @@ product_types = ['Cereal', 'Snacks', 'Beverages', 'Baby Food', 'Meat', 'Fruits',
 Initial_Inventory_dict = {'Cereal':0, 'Snacks':0, 'Beverages':0, 'Baby Food':0, 'Meat':0, 'Fruits':0, 'Vegetables':0, 'Personal Care':0, 'Cosmetics':0, 'Household':0, 'Office Supplies':0, 'Clothes':0}
 
 
-start_date = pd.Timestamp('2001-01-01')
-end_date = pd.Timestamp('2018-12-31')
+start_date = pd.Timestamp('2018-01-01')
+end_date = pd.Timestamp('2023-12-31')
 num_records = 100000 # Number of Sales randomized throughout the time period with 10 Seconds per 1000 records
 items_per_order = (1000,10001) # Insert both a min and max numbers of items in a single order (All orders contain just one type of product)
 

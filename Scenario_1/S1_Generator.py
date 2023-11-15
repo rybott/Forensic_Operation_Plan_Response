@@ -1065,3 +1065,7 @@ def Generate_Scenario_1(conn,
   Balance_Sheets.to_sql('Balance_Sheets', conn, if_exists='replace', index=False)
   # General Ledger
   Gen_Journal_df2.to_sql('General_Journal', conn, if_exists='replace', index=False)
+  # Sales Dataframe 
+  sales_df.to_sql('Sub_Sales_Journal', conn, if_exists='replace', index=False)
+  # Purchase Order Dataframe
+  df_PO.to_sql('Sub_PO_Journal', conn, if_exists='replace', index=False)
