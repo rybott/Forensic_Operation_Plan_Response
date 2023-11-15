@@ -1,10 +1,7 @@
 
 # Imports
 import pandas as pd
-import numpy as np
-from datetime import timedelta
 import random
-import duckdb as ddb
 import sqlite3 as sql
 
 # Further Analysis
@@ -12,13 +9,13 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 
 # Import Scenario Modules
-from ScenarioOne import Generate_Scenario_1
+from Scenario_1.S1_Generator import Generate_Scenario_1
 
 # Create the temp Database 
 conn = sql.connect('Company_Financials.db')
 
 
-# Initial User Data
+# Define all the atributes of your company here
 regions_data = {
     'StoreID': [1,2,3,4,5,6,7,8,9,10],
     'StoreName': ["StoreNY","StoreLA","StorePA","StoreKY","StoreWA","StoreDC","StoreFL","StoreAL","StoreTX","StoreMN",]
@@ -36,9 +33,13 @@ products_df = pd.DataFrame(products_data)
 product_types = ['Cereal', 'Snacks', 'Beverages', 'Baby Food', 'Meat', 'Fruits', 'Vegetables', 'Personal Care', 'Cosmetics', 'Household', 'Office Supplies', 'Clothes']
 
 
+Initial_Inventory_dict = {'Cereal':0, 'Snacks':0, 'Beverages':0, 'Baby Food':0, 'Meat':0, 'Fruits':0, 'Vegetables':0, 'Personal Care':0, 'Cosmetics':0, 'Household':0, 'Office Supplies':0, 'Clothes':0}
+
+
 start_date = pd.Timestamp('2015-01-01')
 end_date = pd.Timestamp('2018-12-31')
-num_records = 1000
+num_records = 1000 # Number of Sales randomized throughout the time period
+items_per_order = (1000,10001) # Insert both a min and max numbers of items in a single order (All orders contain just one type of product)
 
 
 # Expenses - Min Max Touples
@@ -57,14 +58,31 @@ NumberOf_Ads = random.randrange(3,12)
 # Euipment - Asset
 Euipment_Exp_AsPercentof_EBITA = .05
 Equipment_Useful_Life = 20
-Preprogram_Useful_Life = (10/20)
-Preprgram_Accum_depr = (10/20)
+Preprogram_Useful_Life_Remaining = (10/20)
 
 # Equipment - Note
 Note_Payment_Yrs = 20
 Note_Interest_Yrly = .05 # Agreement is .05% on original note value every year.
 Note_Payment_Remaining = (10/20)
 
+# Initial Cash Flow to make sure their are funds in the beginning of the time period for costs. 
+Initial_Cash = 40000000
+
 # Run Program
-Generate_Scenario_1(conn,regions_df,products_df,start_date,end_date,num_records,Expenses,NumberOf_Ads,Euipment_Exp_AsPercentof_EBITA,Equipment_Useful_Life,Preprogram_Useful_Life,
-                        Preprgram_Accum_depr,Note_Payment_Yrs,Note_Interest_Yrly,Note_Payment_Remaining)
+Generate_Scenario_1(conn,
+                    regions_df,
+                    products_df,
+                    start_date,
+                    end_date,
+                    num_records,
+                    items_per_order,
+                    Expenses,
+                    NumberOf_Ads,
+                    Euipment_Exp_AsPercentof_EBITA,
+                    Equipment_Useful_Life,
+                    Preprogram_Useful_Life_Remaining,
+                    Note_Payment_Yrs,
+                    Note_Interest_Yrly,
+                    Note_Payment_Remaining,
+                    Initial_Inventory_dict,
+                    Initial_Cash)

@@ -64,6 +64,7 @@ the years, thus turning a variable cost into a fixed cost.
 |0014|Income Tax|||
 |0015|***Net Income***||xxx|
 
+### I am having trouble getting the cash flow to generate and put a pin in it until Cash Flow statment is nessecary
 |Code|**Cash Flow**|||
 |---|---|---|---|
 |0000|I. Operating Activities|||
@@ -84,3 +85,24 @@ the years, thus turning a variable cost into a fixed cost.
 |0021|***Net Cash Flow***||xxx|
 
 
+# Fraud 
+## Fraud One - Inventory
+- Fraud Ledger: An accompanying general ledger that will contain all of the fraudulent transactions added to the financial statments
+- Target Ledger: This will have a mix of the General and Fraud Ledgers, and create the Target Financial Statments too, regenerating the company with fraud
+**S1F1**: Inventory not decreasing at the same rate as Sales. 
+  - The First fraud for Scenario 1, this will contain **Fake Sales**
+  - First update the fraud ledger like you would a regular sale
+  - Journal Entries
+    | Account Title      | Dr  | Cr  |
+    | ------------------ | --- | --- |
+    | AR (Can't be Cash) | xxx |     |
+    | Sales              |     | xxx |
+  - Effects on Target Financial Statements
+    - Increase Assets + Increased Retained Earnings (Income Statments) = Balanced
+  - Can be detected two ways:
+    - Detecting higher than expected inventory numbers
+    - Detecting abnormally higher AR /  high AR Aging / low AR Turnover
+      - AR aging and Turnover will need the construction of a recievables schedule
+  - In the future I can also use store location of fraud to detect which store is having the issue. All found in the Fraud Ledger
+  
+**S1F2**: Sales Rising without a coresponding increase in COGS or Inventory deplecition

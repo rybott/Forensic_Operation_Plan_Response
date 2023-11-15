@@ -11,8 +11,24 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 
 
-def Generate_Scenario_1(conn, regions_df,products_df,start_date,end_date,num_records,Expenses,NumberOf_Ads,Euipment_Exp_AsPercentof_EBITA,Equipment_Useful_Life,Preprogram_Useful_Life,
-                        Preprgram_Accum_depr,Note_Payment_Yrs,Note_Interest_Yrly,Note_Payment_Remaining):
+def Generate_Scenario_1(conn, 
+                        regions_df,
+                        products_df,
+                        start_date,
+                        end_date,
+                        num_records,
+                        items_per_order,
+                        Expenses,
+                        NumberOf_Ads,
+                        Euipment_Exp_AsPercentof_EBITA,
+                        Equipment_Useful_Life,
+                        Preprogram_Useful_Life,
+                        Note_Payment_Yrs,
+                        Note_Interest_Yrly,
+                        Note_Payment_Remaining,
+                        Initial_Inventory_dict,
+                        Initial_Cash):
+  
   Start_Year = start_date.strftime('%Y')
   End_Year = int(end_date.strftime('%Y'))
 #------------------ Generate Sales Data -------------------------------#
@@ -45,10 +61,10 @@ def Generate_Scenario_1(conn, regions_df,products_df,start_date,end_date,num_rec
       shipment_dates.append(random_date + timedelta(days=np.random.randint(1, 51)))
 
       # Random quantity between 1000 and 10000
-      quantities.append(np.random.randint(1000, 10001))
+      quantities.append(np.random.randint(items_per_order[0], items_per_order[1]))
 
   # Initial Inventory Levels
-  Inventory_dict = {'Cereal':0, 'Snacks':0, 'Beverages':0, 'Baby Food':0, 'Meat':0, 'Fruits':0, 'Vegetables':0, 'Personal Care':0, 'Cosmetics':0, 'Household':0, 'Office Supplies':0, 'Clothes':0}
+  Inventory_dict = Initial_Inventory_dict.copy()
   Vendor_dict = {'Cereal':'Foodco', 'Snacks':'Foodco', 'Beverages':'Foodco', 'Baby Food':'Foodco', 'Meat':'Farmco', 'Fruits':'Farmco', 'Vegetables':'Farmco', 'Personal Care':'Beautyco', 'Cosmetics':'Beautyco', 'Household':'Homeco', 'Office Supplies':'Homeco', 'Clothes':'Fashionco'}
 
   sales_df = pd.DataFrame({
@@ -145,13 +161,6 @@ def Generate_Scenario_1(conn, regions_df,products_df,start_date,end_date,num_rec
   df_PO = df_PO.merge(products_df[['Product','Unit_Cost']], on ='Product', how = 'left')
 
 
-#------------------------------Inventory Creation---------------------------#
-  # Deprecated in Later Updates
-  Inv_DEC = pd.DataFrame({"Date" : sales_df['Shipment_Date'],"Product":sales_df["Product_Type"],"Quantity":sales_df["Quantity"],"Unit_Cost":sales_df["Unit_Cost"]*-1})
-  Inv_INC = pd.DataFrame({"Date": df_PO['Purchase_Date'],"Product":df_PO['Product'],"Quantity":df_PO['Quantity'],"Unit_Cost":df_PO["Unit_Cost"],"Vendor":df_PO['Vendor']})
-
-  df_INV = Inv_DEC.append(Inv_INC,ignore_index=True)
-
 #-----------------------------Total Revenue Calculations---------------#
 
   # Total Revenue
@@ -171,7 +180,7 @@ def Generate_Scenario_1(conn, regions_df,products_df,start_date,end_date,num_rec
   '''
 
   df_Trev = ddb.sql(qry_Trev).df()
-  df_rev = ddb.sql(qry_rev).df()
+  # df_rev = ddb.sql(qry_rev).df()
 
   Rev_dict = dict(zip(df_Trev['Year'],df_Trev['Revenue']))
 
@@ -721,7 +730,7 @@ def Generate_Scenario_1(conn, regions_df,products_df,start_date,end_date,num_rec
 
   # Scenario 1 - All assets will be 10 years into their book values
   # This variables will be the counters for depreciation
-  Value_Equipment = Value_Equipment_New * Preprogram_Useful_Life # Half useful life
+  Value_Equipment = Value_Equipment_New * Preprogram_Useful_Life # Half useful life remaining
   Value_Equipment_depr = Value_Equipment_New - Value_Equipment # Half Depreciated
 
   # Notes will be fixed 5% interest for 20 years for equipment
@@ -791,7 +800,7 @@ def Generate_Scenario_1(conn, regions_df,products_df,start_date,end_date,num_rec
     else:
       pass
 
-  # Finally we add the inital values carried over for Notes Payable and Equipment
+  # Finally we add the inital values carried over for Notes Payable and Equipment and inventory if applicable
 
   # Credit Notes Payable
   Accounts.append(2020)
@@ -823,7 +832,7 @@ def Generate_Scenario_1(conn, regions_df,products_df,start_date,end_date,num_rec
   Accounts.append(1000)
   Dates.append(f"{Start_Year}-01-01")
   Descriptions.append("Cash From Last Year")
-  Amounts.append(40000000)
+  Amounts.append(Initial_Cash)
   Dr_Cr = "Debit"
   Dr_Crs.append(Dr_Cr)
 
@@ -831,9 +840,31 @@ def Generate_Scenario_1(conn, regions_df,products_df,start_date,end_date,num_rec
   Accounts.append(3010)
   Dates.append(f"{Start_Year}-01-01")
   Descriptions.append("Cash From Last Year")
-  Amounts.append(40000000)
+  Amounts.append(Initial_Cash)
   Dr_Cr = "Credit"
   Dr_Crs.append(Dr_Cr)
+
+  # This logic is to balance retained earnings if initial inventory isn't zero
+  if sum(Initial_Inventory_dict.values()) == 0:
+    pass
+  else:
+    # Debit Inventory 
+    Accounts.append(1100)
+    Dates.append(f"{Start_Year}-01-01")
+    Descriptions.append("Inventory From Last Year")
+    Amounts.append(sum(Initial_Inventory_dict.values()))
+    Dr_Cr = "Debit"
+    Dr_Crs.append(Dr_Cr)
+
+    # Credit Retained Earnings
+    Accounts.append(3010)
+    Dates.append(f"{Start_Year}-01-01")
+    Descriptions.append("Inventory From Last Year")
+    Amounts.append(sum(Initial_Inventory_dict.values()))
+    Dr_Cr = "Credit"
+    Dr_Crs.append(Dr_Cr)
+
+  
 
 
   Additional_Journal_df = pd.DataFrame({
@@ -845,7 +876,7 @@ def Generate_Scenario_1(conn, regions_df,products_df,start_date,end_date,num_rec
 
   Gen_Journal_df2 = pd.concat([Gen_Journal_df,Additional_Journal_df], ignore_index=True)
   Gen_Journal_df2['Date'] = pd.to_datetime(Gen_Journal_df2['Date'])
-  print(Gen_Journal_df2.info())
+
 
   Gen_Journal_df2['Date'] = Gen_Journal_df2['Date'].dt.strftime('%Y-%m-%d %H:%M:%S')
 
@@ -1017,13 +1048,16 @@ def Generate_Scenario_1(conn, regions_df,products_df,start_date,end_date,num_rec
 
   Balance_Sheets['Balanced'] = (Balance_Sheets['Total_Assets'] + Balance_Sheets['Total_Liabilities_Equity']).abs() <= 2.00
 
-  # Print Financial Statments - Turn into Save Financial Statments into the Company Database
+  '''
+  Print Financial Statments if needed
+
   with pd.ExcelWriter('combined_workbook.xlsx') as writer:
       Gen_Journal_df2.to_excel(writer, sheet_name='Gen_Journal', index=False)
       Income_Statments.to_excel(writer, sheet_name='Income_Statements', index=False)
       Balance_Sheets_unadjusted.to_excel(writer, sheet_name='Balance_Sheets_Unadjusted', index=False)
       Balance_Sheets.to_excel(writer, sheet_name='Balance_Sheets_Adjusted', index=False)
       Tacc2_adjusted.to_excel(writer, sheet_name='Tacc2_Adjusted', index=False)
+  '''
 
   # Income Statment
   Income_Statments.to_sql('Income_Statments', conn, if_exists='replace', index=False)
