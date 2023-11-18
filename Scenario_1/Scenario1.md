@@ -97,11 +97,12 @@ the years, thus turning a variable cost into a fixed cost.
     | ------------------ | --- | --- |
     | AR (Can't be Cash) | xxx |     |
     | Sales              |     | xxx |
-  - Inventory Entries - Can't use same logic
+  - Inventory Entries - Can't use same logic 
     | Record Inventory          | Dr  | Cr  |
     | ------------------------- | --- | --- |
     | Inventory (Increase Only) | xxx |     |
-    | Retained Earnings         |     | xxx |  
+    | Retained Earnings         |     | xxx |
+    - The following Journal entry made at the begining of the reporting period ensures that there won't be negative inventory, it will occur once at the start of the year that the fraud occurs.
   - Effects on Target Financial Statements
     - Increase Assets + Increased Retained Earnings (Income Statments) = Balanced
   - Can be detected two ways:
