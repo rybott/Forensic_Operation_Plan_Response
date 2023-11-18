@@ -43,7 +43,6 @@ def Generate_Scenario_1(conn,
 
   # Generate data for each record
   for _ in range(num_records):
-
       region_row = regions_df.sample().iloc[0]
       regions.append(region_row['StoreID'])
       countries.append(region_row['StoreName'])
@@ -685,7 +684,7 @@ def Generate_Scenario_1(conn,
   '''
   Tacc2 = ddb.sql(qry_Tacc2).df()
 
-  Tacc2_filtered = Tacc2[Tacc2['Year'] <= End_Year]
+  Tacc2_filtered = Tacc2[Tacc2['Year'] <= End_Year].copy()
   def calculate_ebita(row):
       if row['Account'] == 4000 or row['Account'] == 5000:
           return row['Amount']
@@ -1069,3 +1068,5 @@ def Generate_Scenario_1(conn,
   sales_df.to_sql('Sub_Sales_Journal', conn, if_exists='replace', index=False)
   # Purchase Order Dataframe
   df_PO.to_sql('Sub_PO_Journal', conn, if_exists='replace', index=False)
+
+  return Gen_Journal_df2

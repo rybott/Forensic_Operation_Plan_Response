@@ -10,6 +10,7 @@ import plotly.express as px
 
 # Import Scenario Modules
 from Scenario_1.S1_Generator import Generate_Scenario_1
+from Scenario_1.S1_Fraud import Generate_Fraud1
 
 # Create the temp Database 
 conn = sql.connect('Company_Financials.db')
@@ -38,7 +39,7 @@ Initial_Inventory_dict = {'Cereal':0, 'Snacks':0, 'Beverages':0, 'Baby Food':0, 
 
 start_date = pd.Timestamp('2018-01-01')
 end_date = pd.Timestamp('2023-12-31')
-num_records = 100000 # Number of Sales randomized throughout the time period with 10 Seconds per 1000 records
+num_records = 1000 # Number of Sales randomized throughout the time period with 10 Seconds per 1000 records
 items_per_order = (1000,10001) # Insert both a min and max numbers of items in a single order (All orders contain just one type of product)
 
 
@@ -69,7 +70,7 @@ Note_Payment_Remaining = (10/20)
 Initial_Cash = 40000000
 
 # Run Program
-Generate_Scenario_1(conn,
+Clean_Journal = Generate_Scenario_1(conn,
                     regions_df,
                     products_df,
                     start_date,
@@ -87,4 +88,12 @@ Generate_Scenario_1(conn,
                     Initial_Inventory_dict,
                     Initial_Cash)
 
-print("Finished")
+print("Finished Part 1")
+
+Fstart_date = pd.Timestamp('2017-01-01')
+Fend_date = pd.Timestamp('2017-12-31')
+num_Frecords = 100
+
+Generate_Fraud1(conn,Clean_Journal,regions_df,products_df,Fstart_date,Fend_date,num_Frecords)
+
+print("Finished Part 2")
