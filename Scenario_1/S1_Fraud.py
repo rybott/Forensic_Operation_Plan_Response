@@ -275,7 +275,7 @@ def Generate_Fraud1(conn,Clean_General_Journal,regions_df,products_df,start_date
 
     Balance_Sheets['Balanced'] = (Balance_Sheets['Total_Assets'] + Balance_Sheets['Total_Liabilities_Equity']).abs() <= 2.00
 
-
+    '''
     # Print Financial Statments - Turn into Save Financial Statments into the Company Database
     with pd.ExcelWriter('combined_Fraud_workbook.xlsx') as writer:
         Master_Journal_df.to_excel(writer, sheet_name='Master_Gen_Journal', index=False)
@@ -283,7 +283,8 @@ def Generate_Fraud1(conn,Clean_General_Journal,regions_df,products_df,start_date
         Balance_Sheets_unadjusted.to_excel(writer, sheet_name='F_Balance_Sheets_Unadjusted', index=False)
         Balance_Sheets.to_excel(writer, sheet_name='F_Balance_Sheets_Adjusted', index=False)
         Tacc2_adjusted.to_excel(writer, sheet_name='Tacc2_Adjusted', index=False)
-
+    '''
+    
     # Income Statment
     Income_Statments.to_sql('F_Income_Statments', conn, if_exists='replace', index=False)
     # Balance Sheets
