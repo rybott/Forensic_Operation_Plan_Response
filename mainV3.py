@@ -29,7 +29,7 @@ products_df = pd.DataFrame({
     'Initial_Inventory': [0,0,0,0,0,0,0,0,0,0,0,0]
 })
 
-start_date = pd.Timestamp('2018-01-01')
+start_date = pd.Timestamp('1923-01-01')
 end_date = pd.Timestamp('2023-12-31')
 num_records = 100000 # Number of Sales randomized throughout the time period with 10 Seconds per 1000 records
 items_per_order = (1000,10001) # Insert both a min and max numbers of items in a single order (All orders contain just one type of product)
@@ -95,3 +95,5 @@ Generate_Fraud1(conn,Clean_Journal,stores_df,products_df,Fstart_date,Fend_date,n
 print("Finished Fraud Generating")
 section_1_time = time.time() - start_time
 print("Time taken for Generating: {:.2f} seconds".format(section_1_time))
+
+

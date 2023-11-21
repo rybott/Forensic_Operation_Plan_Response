@@ -119,8 +119,8 @@ def Generate_Fraud1(conn,Clean_General_Journal,regions_df,products_df,start_date
 
     # Concat the Fraud Journal and the General Journal
 
-
-    Master_Journal_df = pd.concat([Fraud_Journal_df,Clean_General_Journal], ignore_index=True)
+    Master_Journal_df = Fraud_Journal_df
+    # Master_Journal_df = pd.concat([Fraud_Journal_df,Clean_General_Journal], ignore_index=True)
     Master_Journal_df['Date'] = pd.to_datetime(Master_Journal_df['Date'])
     Master_Journal_df['Date'] = Master_Journal_df['Date'].dt.strftime('%Y-%m-%d %H:%M:%S')
 
@@ -155,7 +155,8 @@ def Generate_Fraud1(conn,Clean_General_Journal,regions_df,products_df,start_date
     Tacc2 = ddb.sql(qry_Tacc2).df()
     Tacc2_adjusted = Tacc2[Tacc2['Year'] <= End_Year].copy()
 
-    
+    print(Tacc2_adjusted.info())
+    print(Tacc2_adjusted)
 
     #-------------------------Fraud Income Statments-----------------------#
 
