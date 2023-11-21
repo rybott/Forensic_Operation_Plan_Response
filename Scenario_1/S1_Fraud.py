@@ -155,9 +155,6 @@ def Generate_Fraud1(conn,Clean_General_Journal,regions_df,products_df,start_date
     Tacc2 = ddb.sql(qry_Tacc2).df()
     Tacc2_adjusted = Tacc2[Tacc2['Year'] <= End_Year].copy()
 
-    print(Tacc2_adjusted.info())
-    print(Tacc2_adjusted)
-
     #-------------------------Fraud Income Statments-----------------------#
 
     Year = []
