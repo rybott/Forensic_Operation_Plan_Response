@@ -203,56 +203,38 @@ def Generate_Fraud1(conn,Clean_General_Journal,regions_df,products_df,start_date
     'Income_Before_Tax':Income_Before_Tax,
     'Net_Income':Net_Income})
 
-    #------------------------- Balance Sheets --------------------------#
-
-    Cash = []
+    #------------------------- Balance Sheets --------------------------
     ARec = []
-    Inventory = []
     Total_Current_Assets = []
-    Land = []
-    Equpiment = []
-    Buildings = []
-    Net_Accum_Depreciation = []
     Total_Assets = []
-    Accounts_Payable = []
-    Notes_Payable = []
-    Total_Liability = []
     Retained_Earnings = []
     Total_Equity = []
     Total_Liabilities_Equity = []
+
+    Cash = [0] * len(Tacc2_adjusted['Year'].unique())
+    Inventory = [0] * len(Tacc2_adjusted['Year'].unique())
+    Land = [0] * len(Tacc2_adjusted['Year'].unique())
+    Equpiment = [0] * len(Tacc2_adjusted['Year'].unique())
+    Buildings = [0] * len(Tacc2_adjusted['Year'].unique())
+    Net_Accum_Depreciation = [0] * len(Tacc2_adjusted['Year'].unique())
+    Accounts_Payable = [0] * len(Tacc2_adjusted['Year'].unique())
+    Notes_Payable = [0] * len(Tacc2_adjusted['Year'].unique())
+    Total_Liability = [0] * len(Tacc2_adjusted['Year'].unique())
     Year = []
-    Balanced = []
 
     for year in Tacc2_adjusted['Year'].unique():
         if year <= End_Year:
             Year.append(year)
-            cash = Tacc2_adjusted.loc[(Tacc2_adjusted['Account']==1000) & (Tacc2_adjusted['Year']==year),'Amount'].sum()
-            Cash.append(cash)
             arec = Tacc2_adjusted.loc[(Tacc2_adjusted['Account']==1010) & (Tacc2_adjusted['Year']==year),'Amount'].sum()
             ARec.append(arec)
-            inventory = Tacc2_adjusted.loc[(Tacc2_adjusted['Account']==1100) & (Tacc2_adjusted['Year']==year),'Amount'].sum()
-            Inventory.append(inventory)
-            tca = cash + arec + inventory
-            Total_Current_Assets.append(tca)
-            equipment = Tacc2_adjusted.loc[(Tacc2_adjusted['Account']==1230) & (Tacc2_adjusted['Year']==year),'Amount'].sum()
-            Equpiment.append(equipment)
-            equipment_depr = Tacc2_adjusted.loc[(Tacc2_adjusted['Account']==1231) & (Tacc2_adjusted['Year']==year),'Amount'].sum()
-            Net_Accum_Depreciation.append(equipment_depr)
-            total_asset = (cash + arec + inventory + equipment + equipment_depr).astype(float)
-            Total_Assets.append(total_asset)
-            ap = Tacc2_adjusted.loc[(Tacc2_adjusted['Account']==2000) & (Tacc2_adjusted['Year']==year),'Amount'].sum()
-            Accounts_Payable.append(ap)
-            notes = Tacc2_adjusted.loc[(Tacc2_adjusted['Account']==2020) & (Tacc2_adjusted['Year']==year),'Amount'].sum()
-            Notes_Payable.append(notes)
-            total_liability = ap + -notes
-            Total_Liability.append(total_liability)
-            retained_earnings = -Tacc2_adjusted.loc[(Tacc2_adjusted['Account']==3010) & (Tacc2_adjusted['Year']==year),'Amount'].sum() + Income_Statments.loc[(Income_Statments['Year']==year),'Net_Income'].sum()
-            Retained_Earnings.append(retained_earnings*-1)
+            Total_Current_Assets.append(arec)
+            Total_Assets.append(arec)
 
-            total_equity = -retained_earnings
-            Total_Equity.append(total_equity)
-            total_liability_equity = (total_liability + total_equity)
-            Total_Liabilities_Equity.append(total_liability_equity)
+            retained_earnings = Income_Statments.loc[(Income_Statments['Year']==year),'Net_Income'].sum()
+            Retained_Earnings.append(retained_earnings*-1)
+            Total_Equity.append(retained_earnings)
+            Total_Liabilities_Equity.append(retained_earnings)
+
 
     Balance_Sheets_unadjusted = pd.DataFrame({
     'Year':Year,
