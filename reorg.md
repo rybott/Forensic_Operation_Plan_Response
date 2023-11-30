@@ -16,7 +16,8 @@
         - any notes I have on the papers
         - any results to experimentation
   - Buisness Model
-      - Buisness Model.md
+      - Buisness Model.md'
+  - Blog notes
 ### Scenario 1
   - Scenario1.md
       - [ Outlines Scanario 1 and the frauds associated with it ]
