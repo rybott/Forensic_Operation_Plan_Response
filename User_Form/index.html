@@ -41,8 +41,17 @@
 			display: flex;
 			flex-direction: row;
 			align-items: center;
-			justify-content: flex-start;
-		}
+			justify-content: flex-start;}
+		
+		.boarder{
+			border-style: solid; 
+			border-width: thin;}
+			
+		.add_button{
+			text-align: center; 
+			margin-bottom: 3%;}
+	
+	
 	
 	</style
   </head>
@@ -78,16 +87,29 @@
             <div class = "LEchild2"><form><input type='Number'></form></div>
 			<div class = "LEchild"><p> years </p></div>
 		</div> 
+		 <div class = "Labelentry">
+            <div class = "LEchild"><p> First Year in Operation: </p></div>
+            <div class = "LEchild2"><form><input type='Number'></form></div>
+			<div class = "LEchild"><p> years </p></div>
+		</div> 
 			<h5>The Plan is to start with years and state the all finacial statements start on Jan-1st and end Dec 31st, but in the future, I want to offer more graunularity with Quarters, allowing both differnent reporting times that better match quarterly reporting, but also seasonality and more realistic fluxuations found later in the form.<h5>
         <div class = COGSMethSelect>
-            <form>
-                <label for="COGSMeth">Chose an Inventory Valuation Method</label>
-                <select name ="COGSMeth" id ="COGSMeth">
-                    <option value="WA">Weighted Average</option>
-                    <option value="FIFO">FIFO</option>
-                    <option value="LIFO">LIFO</option>
-                </select>
-            </form>
+			<div class = "Labelentry">
+				<div class = "LEchild"><h3>Chose an Inventory Valuation Method</h3></div>
+				<div class = "LEchild">
+					<form>	
+						<select name ="COGSMeth" id ="COGSMeth">
+							<option value="WA">Weighted Average</option>
+							<option value="FIFO">FIFO</option>
+							<option value="LIFO">LIFO</option>
+						</select>
+					</form>
+				</div>
+			</div>
+			<div class = "Labelentry">
+				<div class = "LEchild"><h3>Upload Product Information CSV</h3></div>
+				<div class = "LEchild"><form><Input type="file"></form></div>
+			</div>
         </div>
     </div>
     <div class = "Revenue">
@@ -101,7 +123,7 @@
                 </select>
             </form>
         </div>
-        <div class="NOR", id = "NOR", style = "border-style: solid;" >
+        <div class="boarder", id = "NOR">
 			<div style = "padding: 0 1% 0 1%">
             <h3>Number of Records</h3>
             <div class = "Labelentry">
@@ -117,7 +139,7 @@
             <h5>(Average Variation in Sales Per Year)</h5>
 			</div>
         </div>
-        <div class=y1, id = "y1", style = "border-style: solid; border-width: thin; display: none;" >
+        <div class="boarder", id = "y1", style = "display:none">
 			<div style = "padding: 0 1% 0 1%">
             <h3>First Year Revenue</h3>
             <div class = "Labelentry">
@@ -225,7 +247,7 @@
 				</form>
 			</div>
         </div>
-        <div id = "YesOtherAsset" class = "ifYesOtherAssets" style = "border-style: solid; border-width: thin; display:none;">
+        <div id = "YesOtherAsset" class = "boarder" style = "display:none;">
 		<div style = "padding: 0 1% 0 1%">
             <div class = "Labelentry">
                 <div class = "LEchild"><p>Total Useful Life</p></div>
@@ -268,9 +290,9 @@
                     </div>
                 </div>
             </div>
-			<div style = "text-align: center; margin-bottom: 10%">
-					<button id="myButton">+ Add Another Asset</button>
-					<div style = "color:white;">vvv</div>
+			<div class = "add_button">
+				<button id="myButton">+ Add Another Asset</button>
+				<div style = "color:white;">vvv</div>
 			</div>
         </div>
 		</div>
@@ -278,6 +300,7 @@
     </div>
 	</div>
 	<script>
+		//Update Individual Yearly Revenues 
 		document.addEventListener('DOMContentLoaded', function() {
 			var checkboxYes = document.getElementById("YesUpdateIndividual");
 			var checkboxNo = document.getElementById("NoUpdateIndividual");
@@ -302,13 +325,13 @@
 		document.getElementById('ConnectData').addEventListener('click', function(){
 			alert('This will bring you to another page that allows you to add data and then have it processed by the future AI'); });
 		
-		
+		//Select Between NOR and Y1
 		document.getElementById("NORY1-select").addEventListener('change', function(){
 			var value = this.value;
 			document.getElementById('NOR').style.display = (value == 'a') ? 'block' : 'none';
 			document.getElementById('y1').style.display = (value == 'b') ? 'block' : 'none';});
 			
-			
+		//Select whether you want to change the Modjulation	
 		document.addEventListener('DOMContentLoaded',function() {
 			var checkboxYes = document.getElementById("ModjulationYes")
 			var divYes = document.getElementById("YesModjulate")
