@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet">
+	<style>
+		body{
+			background-color: #000080;}
+		.OuterBrim{
+			background-color: #FFFFFF;
+			margin: 5%;
+			border-radius: 25px;}
+		.Content{
+			margin: 3%;
+			padding-top: .5  %}
+		
+		.HeaderFlex{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			padding-bottom: 2%;}
+			
+		.Labelentry{
+			display: flex;
+			align-items: center;}
+			
+		.LEchild{
+			padding-left: 0;
+			padding-right: 1%;}
+		.LEchild2{
+			padding-left: 0;
+			padding-right: 5px;}
+		.SelectNORorY1{
+			text-align: center;}
+			
+		.FlexExpenseSelect{
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: flex-start;
+		}
+	
+	</style
+  </head>
+  <body>
+	<div class = "OuterBrim">
+	<div class = "Content">
+    <div><h1 style = "text-align: center; font-size: 50px;">Forensic. Operations. Planning. Reponse</h1></div>
+    <div class = "Intro">
+      <p>This is a Mock of what I want the User Interface of my Company Generator. This is a test to make sure the options I provide are relevant and the end user can understand and use the product. </p>
+    </div>
+    <div class = "HeaderConnectSelect">
+        <div class = "HeaderFlex">
+            <h1 style="padding: 1% 1% 1% 0; margin: 0;">User Input</h1>
+            <button id = "ConnectData", style="height: 30px;">Connect Data</button>  
+        </div> 
+        <div class = IndustrySelection>
+            <div class = Industry>
+                <form>
+                    <label for="IndustrySelect">Select The Industry</label>
+                    <select name ="IndustrySelect" id ="IndustrySelect">
+                        <option value="Retail">Retail</option>
+                        <option value="None">That is It for now</option>
+                    </select>
+                </form>
+            </div>
+            <h5>One day there will be an option to input an ID number, and have it automatically pull data for future clients, but also for specific scenarios I have already done.</h5>
+        </div>
+    </div>
+    <div class = "CompanyInfo">
+        <h2>Company Information</h2>  
+        <div class = "Labelentry">
+            <div class = "LEchild"><p> Number of Years In Operation: </p></div>
+            <div class = "LEchild2"><form><input type='Number'></form></div>
+			<div class = "LEchild"><p> years </p></div>
+		</div> 
+			<h5>The Plan is to start with years and state the all finacial statements start on Jan-1st and end Dec 31st, but in the future, I want to offer more graunularity with Quarters, allowing both differnent reporting times that better match quarterly reporting, but also seasonality and more realistic fluxuations found later in the form.<h5>
+        <div class = COGSMethSelect>
+            <form>
+                <label for="COGSMeth">Chose an Inventory Valuation Method</label>
+                <select name ="COGSMeth" id ="COGSMeth">
+                    <option value="WA">Weighted Average</option>
+                    <option value="FIFO">FIFO</option>
+                    <option value="LIFO">LIFO</option>
+                </select>
+            </form>
+        </div>
+    </div>
+    <div class = "Revenue">
+        <h2>Revenues</h2>
+        <div class = "SelectNORorY1" style="padding-bottom: 1.5%;">
+            <form>
+                <label for="NORY1">Chose between inputing Number of Records or First Years Revenue</label>
+                <select name ="NORY1" id ="NORY1-select">
+                    <option value="a">Number of Records</option>
+                    <option value="b">First Years Revenue</option>
+                </select>
+            </form>
+        </div>
+        <div class="NOR", id = "NOR", style = "border-style: solid;" >
+			<div style = "padding: 0 1% 0 1%">
+            <h3>Number of Records</h3>
+            <div class = "Labelentry">
+                <div class = "LEchild"><p>Number of Records</p></div>
+                <div class = "LEchild"><form><input type='text'></form></div>
+            </div>
+            <h5>(Number of Average Sales Invoices Per Year <b>[Estimated Gross Revenue: $---,---,---])</b></h5>
+            <div class = "Labelentry">
+                <div class = "LEchild"><p>Fluxuation</p></div>
+                <div class = "LEchild"><form><input type='text'></form></div>
+                <div class = "LEchild"><h5>(Percent in Decimal Format)</h5></div>
+            </div>
+            <h5>(Average Variation in Sales Per Year)</h5>
+			</div>
+        </div>
+        <div class=y1, id = "y1", style = "border-style: solid; border-width: thin; display: none;" >
+			<div style = "padding: 0 1% 0 1%">
+            <h3>First Year Revenue</h3>
+            <div class = "Labelentry">
+                <div class = "LEchild"><p>First Years Revenue</p></div>
+                <div class = "LEchild"><form><input type='text'></form></div>
+                <div class = "LEchild"><h5>($ Whole Numbers)</h5></div>
+            </div>
+            <div class = "Labelentry">
+                <div class = "LEchild"><p>Revenue Trend Projection</p></div>
+                <div class = "LEchild"><form><input type='Number'></form></div>
+                <div class = "LEchild"><h5>(Decimal Percent Change in Revenue YOY ie. -.05 = 5% Decreases YOY)</h5></div>
+            </div>
+            <div class = "Labelentry" style = "margin-bottom:0, padding-bottom:0">
+                <div class = "LEchild" style= "width: 60%"><p>Modjulation - change the amount of variation in revenue YOY? (Defualt in 30% of Revenue Trend Projection)</p></div>
+                <div class = "LEchild"><form><input id = "ModjulationYes" type="checkbox"></form></div>
+            </div>
+			<div id = "YesModjulate" style = "display:none; align-items: center;">
+                <div class = "LEchild"><p>Modjulation</p></div>
+                <div class = "LEchild"><form><input type="number"></form></div>
+            </div>
+            <div class = "Labelentry">
+                <div class = "LEchild"><p>Would you like to Update Indiviual Years?</p></div>
+				<div class = "LEchild">
+					<form>
+					<label>Yes <input id = "YesUpdateIndividual" type='Checkbox'></label>
+					</form>
+				</div>
+				<div class = "LEchild">
+					<form>
+					<label>No <input id = "NoUpdateIndividual" type='Checkbox' checked></label>
+					</form>
+				</div>				
+            </div>
+            <div id = "YesUpdateContent" style = "display: none">
+                <div class = "SelectYearForRev">
+                    <form>
+                        <label for="RevChangeYr">Chose A Year to Modify</label>
+                        <select name ="RevChangeYr" id ="RevChangeYr">
+                            <option value="year1">Y1</option>
+                            <option value="year2">Y2</option>
+                            <option value="year3">Y3</option>
+                            <option value="year4">etc.</option>
+                        </select>
+                    </form> 
+                </div>
+                <div class="SelectedYearForRev">
+                    <div class = "Labelentry">
+                        <div class = "LEchild"><p>Estimated Revenue</p></div>
+                        <div class = "LEchild"><form><input type='text'></form></div>
+                        <div class = "LEchild"><h5>($ Whole Numbers)</h5></div>
+                    </div>
+                    <div class = "Labelentry">
+                        <div class = "LEchild"><p>Modjulation</p></div>
+                        <div class = "LEchild"><form><input type='text'></form></div>
+                        <div class = "LEchild"><h5>(Current Modulation is .xx)</h5></div>
+                    </div>      
+                </div>
+            </div>
+			</div>
+        </div>
+        
+    </div>
+    <div class = "Expenses">
+        <h2>Expenses</h2>
+        <div class = "FlexExpenseSelect">
+            <div class = "drpdwnExp" style = "flex-grow: 1">
+                <form>
+                    <label for="ExpSelect">Select an Expense</label>
+                    <select name ="ExpSelect" id ="ExpSelect">
+                        <option value="Rent">Rent</option>
+                        <option value="Labor">Labor</option>
+                    </select>
+                </form>
+            </div>
+            <div class = "Labelentry" style = "width: 20%">
+                <div class = "LEchild"><p>Max</p></div>
+                <div class = "LEchild"><form><input type='Number' style = "width: 35%;"></form></div>
+            </div> 
+            <div class = "Labelentry" style = "width: 20%">
+                <div class = "LEchild"><p>Min</p></div>
+                <div class = "LEchild"><form><input type='Number' style = "width: 35%;"></form></div>
+            </div>
+			<h5> (Percent Decimal) <h5>
+        </div>
+		<div class = "Labelentry" style = "justify-content: space-between">
+			<div class = "LEchild"><form id = "Submit"><input type="submit"></form></div>
+			<div class = "LEchild"><h5>Min and Max is a Range of Exp as Percent of EBITA</h5></div>
+		</div>
+        <button>Add Another Exp</button>
+    </div>
+    <div class = "Other Assets">
+        <h2>Other Assets and Liabilities</h2>
+        <p>Currently there is just the option to add Assets which effect either Retained Earnings or Liabilites</p>
+        <p>In the Future I want to add options for addition Liabilites that affect current Cash Levels, as well as other Equity Methods</p>
+        <div class = "Labelentry">
+            <div class = "LEchild"><p>Add Other Assets:</p></div>
+			<div class = "LEchild">
+				<form>
+				<label>Yes <input id = "YesAsset" type='Checkbox'></label>
+				</form>
+			</div>
+			<div class = "LEchild">
+				<form>
+				<label>No <input id = "NoAsset" type='Checkbox' checked></label>
+				</form>
+			</div>
+        </div>
+        <div id = "YesOtherAsset" class = "ifYesOtherAssets" style = "border-style: solid; border-width: thin; display:none;">
+		<div style = "padding: 0 1% 0 1%">
+            <div class = "Labelentry">
+                <div class = "LEchild"><p>Total Useful Life</p></div>
+                <div class = "LEchild"><form><input type='Number'></form></div>
+            </div>           
+            <div class = "Labelentry">
+                <div class = "LEchild"><p>Remaining Useful Life</p></div>
+                <div class = "LEchild"><form><input type='Number'></form></div>
+            </div> 
+			<div class = "Labelentry">
+                <div class = "LEchild"><p>Paid Off: </p></div>
+				<div class = "LEchild">
+					<form>
+					<label>Yes <input id = "YesPaidOff" type='Checkbox'></label>
+					</form>
+				</div>
+				<div class = "LEchild">
+					<form>
+					<label>No <input id = "NoPaidOff" type='Checkbox' checked></label>
+					</form>
+				</div>				
+            </div>
+            <div id = "NotPaidOff">
+                <div class = "Labelentry">
+                    <div class = "LEchild"><p>Interest</p></div>
+                    <div class = "LEchild"><form><input type='Number'></form></div>
+                </div>
+                <div class = "AssetPayInfo">
+                    <div>
+                        <p>Select Years of Service</p>
+                        <p>(Select First and Last)</p>
+                    </div>
+                    <div class = "Labelentry">
+                        <div class = "LEchild"><p>First Year</p></div>
+                        <div class = "LEchild"><form><input type='Number'></form></div>
+                    </div>
+                    <div class = "Labelentry">
+                        <div class = "LEchild"><p>Last Year</p></div>
+                        <div class = "LEchild"><form><input type='Number'></form></div>
+                    </div>
+                </div>
+            </div>
+			<div style = "text-align: center; margin-bottom: 10%">
+					<button id="myButton">+ Add Another Asset</button>
+					<div style = "color:white;">vvv</div>
+			</div>
+        </div>
+		</div>
+	</div>
+    </div>
+	</div>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			var checkboxYes = document.getElementById("YesUpdateIndividual");
+			var checkboxNo = document.getElementById("NoUpdateIndividual");
+			var divYes = document.getElementById("YesUpdateContent");
+
+			checkboxYes.addEventListener('change', function() {
+				if(this.checked){
+					checkboxNo.checked = false;
+					divYes.style.display = 'block';
+				} else {
+					checkboxNo.checked = true;
+					divYes.style.display = 'none';}});
+			checkboxNo.addEventListener('change',function() {
+				if(this.checked){
+					checkboxYes.checked = false;
+					divYes.style.display = 'none';
+				} else {
+					checkboxYes.checked = true;
+					divYes.style.display = 'block';}});}); 
+	
+	
+		document.getElementById('ConnectData').addEventListener('click', function(){
+			alert('This will bring you to another page that allows you to add data and then have it processed by the future AI'); });
+		
+		
+		document.getElementById("NORY1-select").addEventListener('change', function(){
+			var value = this.value;
+			document.getElementById('NOR').style.display = (value == 'a') ? 'block' : 'none';
+			document.getElementById('y1').style.display = (value == 'b') ? 'block' : 'none';});
+			
+			
+		document.addEventListener('DOMContentLoaded',function() {
+			var checkboxYes = document.getElementById("ModjulationYes")
+			var divYes = document.getElementById("YesModjulate")
+			checkboxYes.addEventListener('change', function() {
+				if(this.checked){
+					divYes.style.display = 'flex';
+				} else {
+					divYes.style.display = 'none';}});});
+					
+		//Other Assets			
+		document.addEventListener('DOMContentLoaded', function() {
+			var checkboxYes = document.getElementById("YesAsset");
+			var checkboxNo = document.getElementById("NoAsset");
+			var divYes = document.getElementById("YesOtherAsset");
+
+			checkboxYes.addEventListener('change', function() {
+				if(this.checked){
+					checkboxNo.checked = false;
+					divYes.style.display = 'block';
+				} else {
+					checkboxNo.checked = true;
+					divYes.style.display = 'none';}});
+			checkboxNo.addEventListener('change',function() {
+				if(this.checked){
+					checkboxYes.checked = false;
+					divYes.style.display = 'none';
+				} else {
+					checkboxYes.checked = true;
+					divYes.style.display = 'block';}});}); 
+					
+		//Paid Off			
+		document.addEventListener('DOMContentLoaded', function() {
+			var checkboxNo = document.getElementById("YesPaidOff");
+			var checkboxYes = document.getElementById("NoPaidOff");
+			var divYes = document.getElementById("NotPaidOff");
+
+			checkboxYes.addEventListener('change', function() {
+				if(this.checked){
+					checkboxNo.checked = false;
+					divYes.style.display = 'block';
+				} else {
+					checkboxNo.checked = true;
+					divYes.style.display = 'none';}});
+			checkboxNo.addEventListener('change',function() {
+				if(this.checked){
+					checkboxYes.checked = false;
+					divYes.style.display = 'none';
+				} else {
+					checkboxYes.checked = true;
+					divYes.style.display = 'block';}});}); 
+						
+						
+		
+		
+	</script>
+	
+  </body>
+</html>
