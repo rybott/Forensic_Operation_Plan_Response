@@ -1,0 +1,106 @@
+<mxfile host="Chrome" modified="2024-01-13T07:20:49.112Z" agent="Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="ZJBmVjDjKfR798rsmjmr" version="21.2.7" type="device">
+  <diagram id="VO9hREkp7uBscZGh2lzx" name="Page-1">
+    <mxGraphModel dx="538" dy="367" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Fix3QH_beAFrdsfO6nQi-1" value="&lt;font style=&quot;font-size: 40px;&quot;&gt;&lt;b style=&quot;font-size: 40px;&quot;&gt;JSON DFD&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Courier New;fontSize=40;" parent="1" vertex="1">
+          <mxGeometry x="10" y="10" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Fix3QH_beAFrdsfO6nQi-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Fix3QH_beAFrdsfO6nQi-2" target="Fix3QH_beAFrdsfO6nQi-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Fix3QH_beAFrdsfO6nQi-2" value="&lt;b style=&quot;font-size: 15px;&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;User Input&lt;/font&gt;&lt;/b&gt;" style="shape=ellipse;html=1;dashed=0;whiteSpace=wrap;aspect=fixed;perimeter=ellipsePerimeter;fontFamily=Tahoma;fontSize=15;" parent="1" vertex="1">
+          <mxGeometry x="100" y="70" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Fix3QH_beAFrdsfO6nQi-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Fix3QH_beAFrdsfO6nQi-3" target="Fix3QH_beAFrdsfO6nQi-9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Fix3QH_beAFrdsfO6nQi-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Fix3QH_beAFrdsfO6nQi-3" target="Fix3QH_beAFrdsfO6nQi-14" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Fix3QH_beAFrdsfO6nQi-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="Fix3QH_beAFrdsfO6nQi-3" target="Fix3QH_beAFrdsfO6nQi-35" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="210" y="210" />
+              <mxPoint x="140" y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Fix3QH_beAFrdsfO6nQi-3" value="JSON FILE" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;dashed=0;flipH=1;" parent="1" vertex="1">
+          <mxGeometry x="200" y="77.5" width="70" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="Fix3QH_beAFrdsfO6nQi-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="Fix3QH_beAFrdsfO6nQi-4" target="Fix3QH_beAFrdsfO6nQi-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Fix3QH_beAFrdsfO6nQi-4" value="JS Revenue Generation&lt;br&gt;Function" style="html=1;dashed=0;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="90" y="150" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Fix3QH_beAFrdsfO6nQi-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="Fix3QH_beAFrdsfO6nQi-9" target="Fix3QH_beAFrdsfO6nQi-11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Fix3QH_beAFrdsfO6nQi-9" value="Data_Intake&lt;br&gt;Function" style="html=1;dashed=0;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="310" y="75" width="70" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Fix3QH_beAFrdsfO6nQi-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="Fix3QH_beAFrdsfO6nQi-11" target="Fix3QH_beAFrdsfO6nQi-24" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Fix3QH_beAFrdsfO6nQi-11" value="User_Data&lt;br&gt;Store" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+          <mxGeometry x="420" y="60" width="70" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Fix3QH_beAFrdsfO6nQi-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="1" source="Fix3QH_beAFrdsfO6nQi-14" target="Fix3QH_beAFrdsfO6nQi-31" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="345" y="220" />
+              <mxPoint x="523" y="220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Fix3QH_beAFrdsfO6nQi-14" value="Change the Industry" style="html=1;dashed=0;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="307.5" y="160" width="75" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Fix3QH_beAFrdsfO6nQi-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Fix3QH_beAFrdsfO6nQi-16" target="Fix3QH_beAFrdsfO6nQi-18" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Fix3QH_beAFrdsfO6nQi-16" value="Revenue Generation Output: Sales_df" style="html=1;dashed=0;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="360" y="230" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Fix3QH_beAFrdsfO6nQi-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Fix3QH_beAFrdsfO6nQi-18" target="Fix3QH_beAFrdsfO6nQi-35" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Fix3QH_beAFrdsfO6nQi-18" value="PO Generator&lt;br&gt;Output: PO_df" style="html=1;dashed=0;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="240" y="230" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Fix3QH_beAFrdsfO6nQi-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="1" source="Fix3QH_beAFrdsfO6nQi-24" target="Fix3QH_beAFrdsfO6nQi-31" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="520" y="220" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="400" y="185" />
+              <mxPoint x="400" y="220" />
+              <mxPoint x="523" y="220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Fix3QH_beAFrdsfO6nQi-24" value="Rev Array" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;dashed=0;flipH=1;" parent="1" vertex="1">
+          <mxGeometry x="420" y="160" width="70" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Fix3QH_beAFrdsfO6nQi-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Fix3QH_beAFrdsfO6nQi-31" target="Fix3QH_beAFrdsfO6nQi-16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Fix3QH_beAFrdsfO6nQi-31" value="Generate Rev, PO and COGS for each Year" style="shape=ellipse;html=1;dashed=0;whiteSpace=wrap;aspect=fixed;perimeter=ellipsePerimeter;" parent="1" vertex="1">
+          <mxGeometry x="510" y="210" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Fix3QH_beAFrdsfO6nQi-35" value="COGS Function&lt;br&gt;output: Rev, PO, COGS Array YOY" style="html=1;dashed=0;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="90" y="230" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Fix3QH_beAFrdsfO6nQi-38" value="Generate GM and Expenses based on previous" style="shape=ellipse;html=1;dashed=0;whiteSpace=wrap;aspect=fixed;perimeter=ellipsePerimeter;" parent="1" vertex="1">
+          <mxGeometry x="510" y="320" width="90" height="90" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
