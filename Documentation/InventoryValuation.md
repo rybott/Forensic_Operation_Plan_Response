@@ -2,7 +2,7 @@
 
 ## Current COGS Method
 
-## LIFO FIFO
+## LIFO FIFO Weighted Average
 
 ## Periodic vs Perpetual
 ### Current Method
@@ -15,3 +15,4 @@
 ### Why Perpetual would be better
 - Recording purchase orders like this is not the best way of doing it, and it would be best to have a dedicated generator that takes granular user input and generates purchases divorced from sales, just as it is in real life. 
 - Eventually when I use the Perpetual System, and figure out the processing demands, I will the ability to work on modeling things such as inventory level predictions, rising and falling demand, etc.
+- I am still struggling how to impliment Inventory Valuation Methods into the Code base, if it was perpetual I could add a more grnular system of Cost per Unit changing overtime, but currently that is static and can not be divorced
