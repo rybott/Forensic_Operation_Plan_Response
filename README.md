@@ -1,10 +1,10 @@
 # Forensic Operations Plan and Response
 ### Purpose and Function
-After watching the 1983 movie WarGames, I decided to write my own program that could develop "War Games" 
+Names after the 1983 movie *WarGames*, the purpose of this project is to develop "War Games" 
 for forensic and general accounting. As a forensic accountant, the main focus of the project is on 
 forensics and audit, but it will also be a tool that one can use to learn how different accounting procedures
-work outside of a classroom, but without the need for access to real books. I have tried to get as much help as 
-I could from professtionals in the field to insure the integrety of this tool for that purpose. This is a 
+work outside of a classroom, but without the need for access to real books and records. I have tried to get as much help as 
+I could from professionals in the field to insure the integrety of this tool for that purpose. This is a 
 sandbox, that with a little tweeking, could model any company, fraud, or accounting procedure.
 
 ### Usage 
